@@ -46,7 +46,7 @@ EOT
 
 COPY --from=qbittorrent-src /src /src/qbittorrent
 WORKDIR /src/qbittorrent
-RUN xx-apk --no-cache --no-scripts add boost-dev icu-dev qt6-qtbase-dev qt6-qttools-dev qt6-qtsvg-dev samurai
+RUN xx-apk --no-cache --no-scripts add boost-dev icu-dev qt6-qtbase-dev qt6-qtbase-private-dev qt6-qttools-dev qt6-qtsvg-dev samurai
 RUN <<EOT
   set -ex
   ln -s $(xx-info sysroot)usr/lib/libproxy/libpxbackend*.so $(xx-info sysroot)usr/lib/
